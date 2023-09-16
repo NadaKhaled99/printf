@@ -30,6 +30,10 @@ int printcs(char format, va_list ptr, int counter)
 		counter = printbase(format, ptr, counter);
 	else if (format == 'u')
 		counter = printunsign(ptr, counter);
+	else if (format == 'r')
+		counter = printreversed(ptr, counter);
+	else if (format == 'R')
+		counter = printrot(ptr, counter);
 	else
 	{
 		_putchar('%');
