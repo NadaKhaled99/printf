@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 			if (*(format + j) == '\\')
 			{
 				j++;
-				counter = printslash(*(format + j), ptr, counter);
+				counter = printslash(*(format + j), counter);
 				j++;
 			}
 			else if (*(format + j) == '%')

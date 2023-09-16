@@ -2,12 +2,11 @@
 /**
  * printslash - functn to print /, /n, /t
  * @format: input character
- * @ptr: input pointer
  * @counter: input integer
  *
  * Return: counter
  */
-int printslash(char format, va_list ptr, int counter)
+int printslash(char format, int counter)
 {
 	if (format == '\\')
 	{

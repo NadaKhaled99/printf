@@ -4,7 +4,7 @@
 #include <stddef.h>
 int _putchar(char c);
 int _printf(const char *format, ...);
-int printslash(char format, va_list ptr, int counter);
+int printslash(char format, int counter);
 int printcs(char format, va_list ptr, int counter);
 int printstring(va_list ptr, int counter);
 int printdigit(va_list ptr, int counter);
