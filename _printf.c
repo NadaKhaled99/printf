@@ -11,7 +11,9 @@ int _printf(const char *format, ...)
 	int j = 0;
 	int counter = 0;
 
-	while (format)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	if (format)
 	{
 		va_start(ptr, format);
 		while (*(format + j) != '\0')
@@ -20,25 +22,23 @@ int _printf(const char *format, ...)
 			{
 				j++;
 				counter = printslash(*(format + j), counter);
-				j++;
 			}
 			else if (*(format + j) == '%')
 			{
 				j++;
 				counter = printcs(*(format + j), ptr, counter);
-				j++;
 			}
 			else
 			{
 				_putchar(*(format + j));
 				counter++;
-				j++;
 			}
+			j++;
 		}
 		va_end(ptr);
-		break;
+		_putchar('\n');
+		return (counter - 1);
 	}
-	_putchar('\n');
-	return (counter);
+	return (-1);
 }
 
