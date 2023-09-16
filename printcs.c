@@ -31,6 +31,7 @@ int printcs(char format, va_list ptr, int counter)
 		counter = printbase(format, ptr, counter);
 	else if (format == 'u')
 		counter = printunsign(ptr, counter);
+else if (format == 'S')
+counter = printstringASCII(ptr, counter);
 	return (counter);
 }
-
