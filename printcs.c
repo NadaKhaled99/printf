@@ -11,6 +11,8 @@ int printcs(char format, va_list ptr, int counter)
 {
 	char str;
 
+	if (format && ptr)
+	{
 	if (format == 'c')
 	{
 		str = va_arg(ptr, int);
@@ -41,5 +43,7 @@ int printcs(char format, va_list ptr, int counter)
 		counter += 2;
 	}
 	return (counter);
+	}
+	return (-1);
 }
 

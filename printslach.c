@@ -8,6 +8,8 @@
  */
 int printslash(char format, int counter)
 {
+	if (format)
+	{
 	if (format == '\\')
 	{
 		_putchar('\\');
@@ -30,5 +32,7 @@ int printslash(char format, int counter)
 		counter = counter + 2;
 	}
 	return (counter);
+	}
+	return (-1);
 }
 
