@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 		else if (*(format + j) == '%')
 		{
 			j++;
+			if (!*(format + j))
+				return (-1);
 			counter = printcs(*(format + j), ptr, counter);
 		}
 		else
