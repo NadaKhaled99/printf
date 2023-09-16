@@ -33,6 +33,8 @@ int printreversed(va_list ptr, int counter)
 	char tmp[BUFFER_SIZE];
 	int k;
 
+	if (ptr)
+	{
 	for (k = 0; k < len; k++)
 	{
 		tmp[k] = str[len - k - 1];
@@ -44,6 +46,8 @@ int printreversed(va_list ptr, int counter)
 		counter++;
 	} while (tmp[k] != '\0');
 	return (counter);
+	}
+	return (-1);
 }
 
 /**
@@ -59,6 +63,8 @@ int printrot(va_list ptr, int counter)
 	int len = _strlen(str);
 	int i;
 
+	if (ptr)
+	{
 	for (i = 0; i < len; i++)
 	{
 		if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
@@ -71,5 +77,7 @@ int printrot(va_list ptr, int counter)
 		counter++;
 	}
 	return (counter);
+	}
+	return (-1);
 }
 
