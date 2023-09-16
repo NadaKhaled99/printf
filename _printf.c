@@ -13,32 +13,28 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (format)
+	va_start(ptr, format);
+	while (*(format + j) != '\0')
 	{
-		va_start(ptr, format);
-		while (*(format + j) != '\0')
+		if (*(format + j) == '\\')
 		{
-			if (*(format + j) == '\\')
-			{
-				j++;
-				counter = printslash(*(format + j), counter);
-			}
-			else if (*(format + j) == '%')
-			{
-				j++;
-				counter = printcs(*(format + j), ptr, counter);
-			}
-			else
-			{
-				_putchar(*(format + j));
-				counter++;
-			}
 			j++;
+			counter = printslash(*(format + j), counter);
 		}
-		va_end(ptr);
-		_putchar('\n');
-		return (counter - 1);
+		else if (*(format + j) == '%')
+		{
+			j++;
+			counter = printcs(*(format + j), ptr, counter);
+		}
+		else
+		{
+			_putchar(*(format + j));
+			counter++;
+		}
+		j++;
 	}
-	return (-1);
+	va_end(ptr);
+	_putchar('\n');
+	return (counter);
 }
 
