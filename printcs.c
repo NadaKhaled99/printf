@@ -9,29 +9,28 @@
  */
 int printcs(char format, va_list ptr, int counter)
 {
-	int k = 0;
-	char st;
-	char *str;
+	char str;
 
 	if (format == 'c')
 	{
-		st = va_arg(ptr, int);
-		_putchar(st);
+		str = va_arg(ptr, int);
+		_putchar(str);
 		counter++;
 	}
-	if (format == 's')
-	{
-		str = va_arg(ptr, char*);
-		do {
-			_putchar(str[k++]);
-			counter++;
-		} while (str[k] != '\0');
-	}
-	if (format == '%')
+	else if (format == 's')
+		counter = printstring(ptr, counter);
+	else if (format == '%')
 	{
 		_putchar('%');
 		counter++;
 	}
+	else if ((format == 'd') || (format == 'i'))
+		counter = printdigit(ptr, counter);
+	else if ((format == 'b') || (format == 'o')
+			|| (format == 'x') || (format == 'X'))
+		counter = printbase(format, ptr, counter);
+	else if (format == 'u')
+		counter = printunsign(ptr, counter);
 	return (counter);
 }
 

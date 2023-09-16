@@ -16,7 +16,13 @@ int _printf(const char *format, ...)
 		va_start(ptr, format);
 		while (*(format + j) != '\0')
 		{
-			if (*(format + j) == '%')
+			if (*(format + j) == '\\')
+			{
+				j++;
+				counter = printslash(*(format + j), ptr, counter);
+				j++;
+			}
+			else if (*(format + j) == '%')
 			{
 				j++;
 				counter = printcs(*(format + j), ptr, counter);
