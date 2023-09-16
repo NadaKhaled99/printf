@@ -13,10 +13,11 @@ int printstring(va_list ptr, int counter)
 
 	if (str == NULL)
 		str = "(null)";
-	do {
+	while (str[k] != '\0')
+	{
 		_putchar(str[k++]);
 		counter++;
-	} while (str[k] != '\0');
+	}
 	return (counter);
 }
 
