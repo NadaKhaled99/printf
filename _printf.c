@@ -1,48 +1,54 @@
 #include "main.h"
 /**
- * printcs - functn to print c, s, %
- * @format: input character
- * @ptr: input pointer
- * @counter: input integer
- *
- * Return: counter
- */
-int printcs(char format, va_list ptr, int counter)
+* _printf - Prints anything.
+* @format: String with format of parameters.
+*
+* Return: counter number.
+*/
+#define BUFFER_SIZE 1024
+char bufer[BUFFER_SIZE];
+int buf = 0;
+int _printf(const char *format, ...)
 {
-	char str;
+	va_list ptr;
+	int j = 0;
+	int counter = 0;
 
-	if (format && ptr)
-	{
-	if (format == 'c')
-	{
-		str = va_arg(ptr, int);
-		_putchar(str);
-		counter++;
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
+	va_start(ptr, format);
+	while (*(format + j) != '\0')
+	{		
+		if (buf == BUFFER_SIZE - 1) 
+		{
+		write(1, bufer, buf);
+		buf = 0; 
+		}
+		if (*(format + j) == '\\')
+		{
+			j++;
+			counter = printslash(*(format + j), counter);
+		}
+		else if (*(format + j) == '%')
+		{
+			j++;
+			if (!*(format + j))
+				return (-1);
+			counter = printcs(*(format + j), ptr, counter);
+		}
+		else
+		{
+			_putchar(*(format + j));
+			counter++;
+			 bufer[buf++] =*j;
+		}
+		if (buf > 0)
+		{
+		write(1, bufer, buf);
+		}
+		j++;
 	}
-	else if (format == 's')
-		counter = printstring(ptr, counter);
-	else if (format == '%')
-	{
-		_putchar('%');
-		counter++;
-	}
-	else if ((format == 'd') || (format == 'i'))
-		counter = printdigit(ptr, counter);
-	else if (format == 'b' || format == 'o' || format == 'x' || format == 'X')
-		counter = printbase(format, ptr, counter);
-	else if (format == 'u')
-		counter = printunsign(ptr, counter);
-	else if (format == 'r')
-		counter = printreversed(ptr, counter);
-	else if (format == 'R')
-		counter = printrot(ptr, counter);
-	else
-	{
-		_putchar('%');
-		_putchar(format);
-		counter += 2;
-	}
+	va_end(ptr);
+	_putchar('\n');
 	return (counter);
-	}
-	return (-1);
 }
