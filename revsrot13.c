@@ -44,7 +44,7 @@ int printreversed(va_list ptr, int counter)
 	do {
 		_putchar(tmp[k++]);
 		counter++;
-	} while (tmp[k - 1] != '\0');
+	} while (tmp[k] != '\0');
 	return (counter);
 	}
 	return (-1);
