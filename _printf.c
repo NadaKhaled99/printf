@@ -5,23 +5,17 @@
 *
 * Return: counter number.
 */
-#define BUFFER_SIZE 1024
 int _printf(const char *format, ...)
 {
-	va_list ptr;
-	int j = 0, int counter = 0;
-	int buf;
-	char bufer[BUFFER_SIZE];
+va_list ptr;
+	int j = 0;
+	int counter = 0;
+
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(ptr, format);
 	while (*(format + j) != '\0')
 	{
-	if (buf == BUFFER_SIZE - 1)
-	{
-	write(1, bufer, buf);
-	buf = 0;
-		}
 		if (*(format + j) == '\\')
 		{
 			j++;
@@ -38,11 +32,6 @@ int _printf(const char *format, ...)
 		{
 			_putchar(*(format + j));
 			counter++;
-			 bufer[buf++] = *j;
-		}
-		if (buf > 0)
-		{
-		write(1, bufer, buf);
 		}
 		j++;
 	}
