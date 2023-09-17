@@ -1,42 +1,37 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 /**
-* _printf - Prints anything.
-* @format: String with format of parameters.
-*
-* Return: counter number.
+*_printf-printf function that customized
+*@format:format string
+*Return:no. of characters which is printed
 */
 int _printf(const char *format, ...)
 {
-	va_list ptr;
-	int j = 0;
-	int counter = 0;
-
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-	va_start(ptr, format);
-	while (*(format + j) != '\0')
-	{
-		if (*(format + j) == '\\')
-		{
-			j++;
-			counter = printslash(*(format + j), counter);
-		}
-		else if (*(format + j) == '%')
-		{
-			j++;
-			if (!*(format + j))
-				return (-1);
-			counter = printcs(*(format + j), ptr, counter);
-		}
-		else
-		{
-			_putchar(*(format + j));
-			counter++;
-		}
-		j++;
-	}
-	va_end(ptr);
-	_putchar('\n');
-	return (counter);
+va_list ptr;
+int ch;
+int len = 0;    
+va_start(ptr, format);
+while (format && format[len])
+{
+if (format[len] == '%')
+{
+len++;
+if (format[len] == '%')
+{
+putchar('%');
+ch++;
+len++;
 }
-
+ch = ch + formattedargument(format, len, ptr);
+}
+else
+{
+ch++;
+putchar(format[len]);
+}
+len++;
+}
+va_end(ptr);
+return ch;
+}
