@@ -11,27 +11,32 @@ int _printf(const char *format, ...)
 	int j = 0;
 	int counter = 0;
 
-	while (format)
-	{
-		va_start(ptr, format);
+	if (format == NULL || (format[0] == '%' && !format[1])
+			|| (format[0] == '%' && format[1] == ' ' && !format[2]))
+		return (-1);
+	va_start(ptr, format);
 		while (*(format + j) != '\0')
 		{
-			if (*(format + j) == '%')
+			if (*(format + j) == '\\')
 			{
 				j++;
-				counter = printcs(*(format + j), ptr, counter);
+				counter = printslash(*(format + j), counter);
+			}
+			else if (*(format + j) == '%')
+			{
 				j++;
+				if (!*(format + j))
+					return (-1);
+				counter = printcs(*(format + j), ptr, counter);
 			}
 			else
 			{
 				_putchar(*(format + j));
 				counter++;
-				j++;
 			}
+			j++;
 		}
 		va_end(ptr);
-		break;
-	}
 	_putchar('\n');
 	return (counter);
 }
