@@ -6,14 +6,12 @@
 * Return: counter number.
 */
 #define BUFFER_SIZE 1024
-char bufer[BUFFER_SIZE];
-int buf = 0;
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int j = 0;
-	int counter = 0;
-
+	int j = 0, int counter = 0;
+	int buf;
+	char bufer[BUFFER_SIZE];
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(ptr, format);
