@@ -37,7 +37,7 @@ int printcs(char format, va_list ptr, int counter)
 	else if (format == 'R')
 		counter = printrot(ptr, counter);
 	else if (format == 'S')
-		counter = printhex(ptr, base, counter, hexcase);
+		counter = printHex(ptr, counter);
 	else
 	{
 		_putchar('%');
