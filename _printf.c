@@ -7,35 +7,31 @@
 */
 int _printf(const char *format, ...)
 {
-va_list ptr;
+	va_list ptr;
 	int j = 0;
 	int counter = 0;
 
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-	va_start(ptr, format);
-	while (*(format + j) != '\0')
+	while (format)
 	{
-		if (*(format + j) == '\\')
+		va_start(ptr, format);
+		while (*(format + j) != '\0')
 		{
-			j++;
-			counter = printslash(*(format + j), counter);
+			if (*(format + j) == '%')
+			{
+				j++;
+				counter = printcs(*(format + j), ptr, counter);
+				j++;
+			}
+			else
+			{
+				_putchar(*(format + j));
+				counter++;
+				j++;
+			}
 		}
-		else if (*(format + j) == '%')
-		{
-			j++;
-			if (!*(format + j))
-				return (-1);
-			counter = printcs(*(format + j), ptr, counter);
-		}
-		else
-		{
-			_putchar(*(format + j));
-			counter++;
-		}
-		j++;
+		va_end(ptr);
+		break;
 	}
-	va_end(ptr);
 	_putchar('\n');
 	return (counter);
 }
