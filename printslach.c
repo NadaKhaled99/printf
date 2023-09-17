@@ -34,4 +34,5 @@ int printslash(char format, int counter)
 	return (counter);
 	}
 	return (-1);
+}
 
