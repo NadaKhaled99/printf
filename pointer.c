@@ -1,6 +1,7 @@
 #include "main.h"
 /**
 *printpointer- functn to print pointer
+*@ptr:input pointer
 *@counter: input integer
 *Return: counter
 */

@@ -11,7 +11,6 @@ int printcs(char format, va_list ptr, int counter)
 {
 	char str;
 	int length = 0;
-
 	if (format && ptr)
 	{
 	if (format == 'c')
