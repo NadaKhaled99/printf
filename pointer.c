@@ -7,14 +7,14 @@
 */
 int printpointer(va_list ptr, int counter)
 {
-void *ptr = va_arg(ptr, void*);
-char digit_array[] = "0123456789abcdef";
+int f;
+char L_array[] = "0123456789abcdef";
 _putchar('0');
 _putchar('x');
 counter += counter;
-for (int d = sizeof(void *) * 2 - 1; d >= 0; d--)
+for (f = sizeof(void *) * 2 - 1; f >= 0; f--)
 {
-_putchar(digit_array[((unsigned long)ptr >> (d * 4)) & 0xf]);
+_putchar(L_array[((unsigned long)ptr >> (f * 4)) & 0xf]);
 counter++;
 }
 return (counter);

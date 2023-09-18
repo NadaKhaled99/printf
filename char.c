@@ -8,6 +8,7 @@
  */
 int printchar(va_list ptr, int counter)
 {
+char str;
 str = va_arg(ptr, int);
 _putchar(str);
 counter++;

@@ -9,14 +9,11 @@
  */
 int printcs(char format, va_list ptr, int counter)
 {
-	char str;
-	int length = 0;
-
 if (format && ptr)
 	{
 	if (format == 'c')
 	{
-		printchar(va_list ptr, int counter);
+		printchar(ptr, counter);
 	}
 	else if (format == 's')
 		counter = printstring(ptr, counter);
