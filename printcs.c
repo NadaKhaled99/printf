@@ -37,7 +37,7 @@ int printcs(char format, va_list ptr, int counter)
 	else if (format == 'R')
 		counter = printrot(ptr, counter);
 	else if (format == 'S')
-		counter = printstringS(ptr, counter);
+		counter = printSTR(ptr, counter);
 	else
 	{
 		_putchar('%');

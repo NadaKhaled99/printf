@@ -1,5 +1,32 @@
 #include "main.h"
 /**
+*printSTR-function to print String with non printable
+*@ptr:input pointer
+*@counter:input integer 
+*Return:counter
+*/
+int printSTR(va_list ptr, int counter) 
+{
+char* str = va_arg(ptr, char*);
+if (str == NULL)
+{        
+str = "(null)”;
+}
+for (int h = 0; str[h] != '\0'; h++)
+{
+if (str[h] < 32 || str[h] >= 127) 
+{
+printf("\\x%02X", (unsigned char)str[h]);
+} 
+else 
+{
+_putchar(str[h]);
+}
+counter++;
+}
+return counter;
+}
+/**
 *printstringS-function to print string with non printable
 *@ptr:input pointer
 *@counter:input integer
