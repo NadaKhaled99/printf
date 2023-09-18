@@ -36,6 +36,8 @@ int printcs(char format, va_list ptr, int counter)
 		counter = printreversed(ptr, counter);
 	else if (format == 'R')
 		counter = printrot(ptr, counter);
+	else if (format == 'S')
+		counter = printstringS(ptr, counter);
 	else
 	{
 		_putchar('%');
