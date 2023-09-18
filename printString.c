@@ -10,7 +10,7 @@ int printString(va_list ptr, int counter)
 char *str = va_arg(ptr, char *);
 if (str == NULL)
 {        
-str = "(null)”;
+str = "(null)";
 }
 while(*str)
 {
