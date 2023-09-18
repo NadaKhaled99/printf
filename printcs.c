@@ -11,13 +11,12 @@ int printcs(char format, va_list ptr, int counter)
 {
 	char str;
 	int length = 0;
-	if (format && ptr)
+
+if (format && ptr)
 	{
 	if (format == 'c')
 	{
-		str = va_arg(ptr, int);
-		_putchar(str);
-		counter++;
+		printchar(va_list ptr, int counter);
 	}
 	else if (format == 's')
 		counter = printstring(ptr, counter);
