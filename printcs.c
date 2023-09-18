@@ -10,6 +10,7 @@
 int printcs(char format, va_list ptr, int counter)
 {
 	char str;
+	int length = 0;
 
 	if (format && ptr)
 	{
@@ -37,7 +38,9 @@ int printcs(char format, va_list ptr, int counter)
 	else if (format == 'R')
 		counter = printrot(ptr, counter);
 	else if (format == 'S')
-		counter = printSTR(ptr, counter);
+		counter = printString(ptr, counter);
+	else if (format == 'p')
+		counter = printpointer(ptr, counter);
 	else
 	{
 		_putchar('%');
