@@ -16,8 +16,8 @@ for (int l = 0; str[l] != '\0'; l++)
 {
 if (str[l] < 32 || str[l] >= 127)
 {
-_putchar('x');
 _putchar('\\');
+_putchar('x');
 _putchar((str[l] >> 4) + '0');
 _putchar ((str[l] & 0xF) + ((str[l] & 0xF) < 10 ? '0' : 'A' - 10));
 counter = counter + 4;
