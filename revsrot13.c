@@ -28,26 +28,29 @@ int _strlen(char *s)
  */
 int printreversed(va_list ptr, int counter)
 {
-	char *str = va_arg(ptr, char *);
-	int len = _strlen(str);
-	char tmp[1024];
-	int k;
+char *str = va_arg(ptr, char *);
+int len;
 
-	if (ptr)
-	{
-	for (k = 0; k < len; k++)
-	{
-		tmp[k] = str[len - k - 1];
-	}
-	tmp[k] = '\0';
-	k = 0;
-	do {
-		_putchar(tmp[k++]);
-		counter++;
-	} while (tmp[k] != '\0');
-	return (counter);
-	}
-	return (-1);
+if (!str)
+{
+_putchar('(');
+_putchar('n');
+_putchar('u');
+_putchar('l');
+_putchar('l');
+_putchar(')');
+counter = counter + 6;
+}
+else
+{
+len = _strlen(str);
+do {
+_putchar(str[len - 1]);
+counter++;
+len--;
+} while (len > 0);
+}
+return (counter);
 }
 
 /**
