@@ -11,7 +11,7 @@ int printFlag(const char *format, int *z)
 const char charater[] = {'-', '+', '0', '#', ' '};
 int choose = 0;
 const int Array_Flag[] = {flagminus,
-flagplus, flagzero, flaghastag, flagspace, flagzero};
+flagplus, flagzero, flaghash, flagspace, flagzero};
 int counter = *z + 1;
 while (format[counter] != '\0')
 {
@@ -22,11 +22,11 @@ if (format[counter] == charater[iteration])
 {
 choose |= Array_Flag[iteration];
 }
-iteration++;
 else
 {
 break;
 }
+iteration++;
 }
 if (charater[iteration] == 0)
 break;
