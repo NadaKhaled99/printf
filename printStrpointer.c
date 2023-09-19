@@ -36,3 +36,33 @@ str++;
 }
 return (counter);
 }
+
+/**
+*printpointer- functn to print pointer
+*@ptr:input pointer
+*@counter: input integer
+*Return: counter
+*/
+int printpointer(va_list ptr, int counter)
+{
+unsigned long int pt = va_arg(ptr, unsigned long int);
+int k = 0;
+char L_array[] = "0123456789abcdef";
+char tmp[16];
+_putchar('0');
+_putchar('x');
+counter = counter + 2;
+while (pt / 16)
+{
+tmp[k++] = L_array[pt % 16];
+pt /= 16;
+}
+tmp[k] = L_array[pt % 16];
+while (k >= 0)
+{
+_putchar(tmp[k]);
+k--;
+counter++;
+}
+return (counter);
+}
