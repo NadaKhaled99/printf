@@ -16,10 +16,7 @@ if (format && ptr)
 	else if (format == 's')
 		counter = printstring(ptr, counter);
 	else if (format == '%')
-	{
-		_putchar('%');
-		counter++;
-	}
+		counter = printpercentage(counter);
 	else if ((format == 'd') || (format == 'i'))
 		counter = printdigit(ptr, counter);
 	else if (format == 'b' || format == 'o' || format == 'x' || format == 'X')
@@ -35,11 +32,7 @@ if (format && ptr)
 	else if (format == 'p')
 		counter = printpointer(ptr, counter);
 	else
-	{
-		_putchar('%');
-		_putchar(format);
-		counter += 2;
-	}
+		counter = printdefault(format, counter);
 	return (counter);
 	}
 	return (-1);

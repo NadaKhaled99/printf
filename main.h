@@ -19,4 +19,6 @@ int printString(va_list ptr, int counter);
 int printpointer(va_list ptr, int counter);
 int printreversed(va_list ptr, int counter);
 int printrot(va_list ptr, int counter);
+int printpercentage(int counter);
+int printdefault(char format, int counter);
 #endif
