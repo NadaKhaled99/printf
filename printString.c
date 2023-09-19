@@ -8,6 +8,7 @@
 int printString(va_list ptr, int counter)
 {
 char *str = va_arg(ptr, char *);
+
 if (str == NULL)
 {
 str = "(null)";
@@ -24,8 +25,14 @@ else
 _putchar('\\');
 _putchar('x');
 counter = counter + 2;
-}
+if (*str < 16)
+{
+_putchar('0');
 counter++;
+}
+counter += _printf("%X", *str);
+}
+str++;
 }
 return (counter);
 }
