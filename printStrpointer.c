@@ -49,6 +49,18 @@ unsigned long int pt = va_arg(ptr, unsigned long int);
 int k = 0;
 char L_array[] = "0123456789abcdef";
 char tmp[16];
+
+if (ptr == NULL)
+{
+_putchar('(');
+_putchar('n');
+_putchar('i');
+_putchar('l');
+_putchar(')');
+counter = counter + 5;
+}
+else
+{
 _putchar('0');
 _putchar('x');
 counter = counter + 2;
@@ -63,6 +75,7 @@ while (k >= 0)
 _putchar(tmp[k]);
 k--;
 counter++;
+}
 }
 return (counter);
 }
