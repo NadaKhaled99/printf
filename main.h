@@ -3,6 +3,11 @@
 #include <stdarg.h>
 #include <stddef.h>
 #define BUFFER_SIZE 1024
+#define flagminus 1
+#define flagplus 2
+#define flagzero 4
+#define flaghash 8
+#define flagspace 16
 int _putchar(char c);
 int _strlen(char *s);
 int _printf(const char *format, ...);
@@ -20,5 +25,6 @@ int printpointer(va_list ptr, int counter);
 int printreversed(va_list ptr, int counter);
 int printrot(va_list ptr, int counter);
 int printpercentage(int counter);
+int printFlag(const char *format, int *z);
 int printdefault(char format, int counter);
 #endif
