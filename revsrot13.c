@@ -30,7 +30,7 @@ int printreversed(va_list ptr, int counter)
 {
 	char *str = va_arg(ptr, char *);
 	int len = _strlen(str);
-	char tmp[BUFFER_SIZE];
+	char tmp[1024];
 	int k;
 
 	if (ptr)
