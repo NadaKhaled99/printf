@@ -23,14 +23,14 @@ if (format && ptr)
 		counter = printbase(format, ptr, counter);
 	else if (format == 'u')
 		counter = printunsign(ptr, counter);
-	else if (format == 'r')
-		counter = printreversed(ptr, counter);
-	else if (format == 'R')
-		counter = printrot(ptr, counter);
 	else if (format == 'S')
 		counter = printString(ptr, counter);
 	else if (format == 'p')
 		counter = printpointer(ptr, counter);
+	else if (format == 'r')
+		counter = printreversed(ptr, counter);
+	else if (format == 'R')
+		counter = printrot(ptr, counter);
 	else
 		counter = printdefault(format, counter);
 	return (counter);
