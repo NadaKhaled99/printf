@@ -12,9 +12,7 @@ int printcs(char format, va_list ptr, int counter)
 if (format && ptr)
 	{
 	if (format == 'c')
-	{
-		printchar(ptr, counter);
-	}
+		counter = printchar(ptr, counter);
 	else if (format == 's')
 		counter = printstring(ptr, counter);
 	else if (format == '%')
