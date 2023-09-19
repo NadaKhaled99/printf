@@ -50,7 +50,7 @@ int k = 0;
 char L_array[] = "0123456789abcdef";
 char tmp[16];
 
-if (ptr == NULL)
+if (pt == 0)
 {
 _putchar('(');
 _putchar('n');
