@@ -7,19 +7,18 @@
  *
  * Return: counter
  */
-int printbase(char format, va_list ptr, int counter)
+int printbase(const char *format, va_list ptr, int counter)
 {
-	if (format == 'b')
-		counter = printbze(ptr, 2, counter);
-	else if (format == 'o')
-		counter = printbze(ptr, 8, counter);
-	else if (format == 'x')
-		counter = printhex(ptr, 16, counter, 0);
-	else if (format == 'X')
-		counter = printhex(ptr, 16, counter, 1);
-	return (counter);
+if (*format == 'b')
+counter = printbze(ptr, 2, counter);
+else if (*format == 'o')
+counter = printbze(ptr, 8, counter);
+else if (*format == 'x')
+counter = printhex(ptr, 16, counter, 0);
+else if (*format == 'X')
+counter = printhex(ptr, 16, counter, 1);
+return (counter);
 }
-
 /**
  * printbze - functn to print bin, oct
  * @ptr: input pointer

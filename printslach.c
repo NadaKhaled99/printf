@@ -6,21 +6,21 @@
  *
  * Return: counter
  */
-int printslash(char format, int counter)
+int printslash(const char *format, int counter)
 {
-	if (format)
+	if (*format)
 	{
-	if (format == '\\')
+	if (*format == '\\')
 	{
 		_putchar('\\');
 		counter++;
 	}
-	else if (format == 'n')
+	else if (*format == 'n')
 	{
 		_putchar('\n');
 		counter++;
 	}
-	else if (format == 't')
+	else if (*format == 't')
 	{
 		_putchar('\t');
 		counter++;
@@ -28,7 +28,7 @@ int printslash(char format, int counter)
 	else
 	{
 		_putchar('\\');
-		_putchar(format);
+		_putchar(*format);
 		counter = counter + 2;
 	}
 	return (counter);

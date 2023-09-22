@@ -23,15 +23,14 @@ int printstring(va_list ptr, int counter)
 
 /**
  * printdigit - functn to print integer or decimal
- * @ptr: input pointer
+ * @n: input integer
  * @counter: input integer
  *
  * Return: counter
  */
-int printdigit(va_list ptr, int counter)
+int printdigit(int n, int counter)
 {
 	int devided = 1;
-	int n = va_arg(ptr, int);
 
 	if (n < 0)
 	{

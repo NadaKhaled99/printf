@@ -20,14 +20,14 @@ int _printf(const char *format, ...)
 		if (*(format + j) == '\\')
 		{
 			j++;
-			counter = printslash(*(format + j), counter);
+			counter = printslash(format + j, counter);
 		}
 		else if (*(format + j) == '%')
 		{
 			j++;
 			if (!*(format + j))
 				return (-1);
-			counter = printcs(*(format + j), ptr, counter);
+			counter = printcs(format + j, &j, ptr, counter);
 		}
 		else
 		{

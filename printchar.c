@@ -34,10 +34,10 @@ return (counter);
  *
  * Return: counter
  */
-int printdefault(char format, int counter)
+int printdefault(const char *format, int counter)
 {
 _putchar('%');
-_putchar(format);
+_putchar(*format);
 counter += 2;
 return (counter);
 }
