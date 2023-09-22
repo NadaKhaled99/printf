@@ -71,12 +71,16 @@ return (counter);
  */
 int printhash(const char *format, int *j, va_list ptr, int counter)
 {
+unsigned int n = va_arg(ptr, unsigned int);
 format++;
 *j = (*j) + 1;
 if (*format == 'o')
 {
+if (n > 0)
+{
 _putchar('0');
 counter++;
+}
 }
 if (*format == 'x')
 {
@@ -90,6 +94,6 @@ _putchar('0');
 _putchar('X');
 counter = counter + 2;
 }
-counter = printbase(format, ptr, counter);
+counter = printbase(format, n, counter);
 return (counter);
 }

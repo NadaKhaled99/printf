@@ -13,6 +13,7 @@ int printcs(const char *format, int *j, va_list ptr, int counter)
 if (format && ptr)
 {
 	int n;
+	unsigned int m;
 
 	if (*format == 'c')
 		counter = printchar(ptr, counter);
@@ -26,7 +27,10 @@ if (format && ptr)
 		counter = printdigit(n, counter);
 	}
 	else if (*format == 'b' || *format == 'o' || *format == 'x' || *format == 'X')
-		counter = printbase(format, ptr, counter);
+	{
+		m = va_arg(ptr, unsigned int);
+		counter = printbase(format, m, counter);
+	}
 	else if (*format == 'u')
 		counter = printunsign(ptr, counter);
 	else if (*format == 'S')

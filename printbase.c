@@ -2,34 +2,33 @@
 /**
  * printbase - functn to print bin, oct, hex
  * @format: input character
- * @ptr: input pointer
+ * @n: input integer
  * @counter: input integer
  *
  * Return: counter
  */
-int printbase(const char *format, va_list ptr, int counter)
+int printbase(const char *format, int n, int counter)
 {
 if (*format == 'b')
-counter = printbze(ptr, 2, counter);
+counter = printbze(n, 2, counter);
 else if (*format == 'o')
-counter = printbze(ptr, 8, counter);
+counter = printbze(n, 8, counter);
 else if (*format == 'x')
-counter = printhex(ptr, 16, counter, 0);
+counter = printhex(n, 16, counter, 0);
 else if (*format == 'X')
-counter = printhex(ptr, 16, counter, 1);
+counter = printhex(n, 16, counter, 1);
 return (counter);
 }
 /**
  * printbze - functn to print bin, oct
- * @ptr: input pointer
+ * @n: input integer
  * @base: input integer
  * @counter: input integer
  *
  * Return: counter
  */
-int printbze(va_list ptr, int base, int counter)
+int printbze(int n, int base, int counter)
 {
-	unsigned int n = va_arg(ptr, unsigned int);
 	int bit[32];
 	int k = 0;
 
@@ -56,16 +55,15 @@ int printbze(va_list ptr, int base, int counter)
 
 /**
  * printhex - functn to print hexadecimal
- * @ptr: input pointer
+ * @n: input integer
  * @base: input integer
  * @counter: input integer
  * @hexcase: input integer (upper or lower)
  *
  * Return: counter
  */
-int printhex(va_list ptr, int base, int counter, int hexcase)
+int printhex(int n, int base, int counter, int hexcase)
 {
-	unsigned int n = va_arg(ptr, unsigned int);
 	int bit[32];
 	int k = 0;
 
