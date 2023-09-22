@@ -28,6 +28,8 @@ return (counter);
 int printpospace(const char *format, int *j, va_list ptr, int counter)
 {
 int n = va_arg(ptr, int);
+while ((*format != 'd') && (*format != 'i'))
+{
 if (*format == ' ')
 {
 if (n >= 0)
@@ -35,6 +37,8 @@ if (n >= 0)
 _putchar(' ');
 counter++;
 }
+format++;
+*j = (*j) + 1;
 }
 if (*format == '+')
 {
@@ -43,9 +47,15 @@ if (n >= 0)
 _putchar('+');
 counter++;
 }
-}
 format++;
 *j = (*j) + 1;
+if (*format == ' ')
+{
+format++;
+*j = (*j) + 1;
+}
+}
+}
 if ((*format == 'd') || (*format == 'i'))
 counter = printdigit(n, counter);
 return (counter);
