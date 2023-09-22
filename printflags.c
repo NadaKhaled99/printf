@@ -35,13 +35,7 @@ counter++;
 }
 if (*format == '+')
 {
-if (n < 0)
-{
-_putchar('-');
-counter++;
-n = -n;
-}
-else if (n >= 0)
+if (n >= 0)
 {
 _putchar('+');
 counter++;
