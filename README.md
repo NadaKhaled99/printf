@@ -11,9 +11,8 @@ HERE IS THE DESCISRIPTION
 /**
 # int _printf(const char *format, ...)
 * _printf - Prints anything
-* @format: String with format of parameters.
-*
-* Return: counter number.
+*@format: String with format of parameters.
+ * Return: counter number.
 */
 ——————————————————————————————
 # int printcs(char format, va_list ptr, int counter)
@@ -22,7 +21,6 @@ HERE IS THE DESCISRIPTION
  * @format: input character
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -30,10 +28,9 @@ HERE IS THE DESCISRIPTION
 # int _putchar(char c)
  * _putchar - writes the character c to stdout
  * @c: The character to print
- *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
- */
+*/
 ——————————————————————————————
 /**
 # int printpointer(va_list ptr, int counter)
@@ -43,8 +40,6 @@ HERE IS THE DESCISRIPTION
 *Return: counter
 */
 ——————————————————————————————
-
-
 # int printString(va_list ptr, int counter)
 /**
 *printString-function to print String with non printable
@@ -59,7 +54,6 @@ HERE IS THE DESCISRIPTION
  * @format: input character
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -68,18 +62,14 @@ HERE IS THE DESCISRIPTION
  * printchar - functn to print char
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
-
-
 # int printslash(char format, int counter)
 /**
  * printslash - functn to print /, /n, /t
  * @format: input character
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -98,7 +88,6 @@ HERE IS THE DESCISRIPTION
 /**
  * printpercentage - functn to print %
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -107,19 +96,14 @@ HERE IS THE DESCISRIPTION
  * printdefault - functn to print default
  * @format: input character
  * @counter: input integer
- *
  * Return: counter
  */
-——————————————————————————————
-
-
-
+—————————————————————————————-
 # int printstring(va_list ptr, int counter)
 /**
  * printstring - functn to print string
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -128,7 +112,6 @@ HERE IS THE DESCISRIPTION
  * printdigit - functn to print integer or decimal
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -137,7 +120,6 @@ HERE IS THE DESCISRIPTION
  * printunsign - functn to print unsigned int
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -145,22 +127,15 @@ HERE IS THE DESCISRIPTION
 /**
  * _strlen - functn measure array length
  * @s: my input
- *
  * Description: function calculate arr length
- *
  * Return: length
  */
 ——————————————————————————————
-
-
-
-
 # int printreversed(va_list ptr, int counter)
 /**
  * printreversed - functn reversed string
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -169,7 +144,6 @@ HERE IS THE DESCISRIPTION
  * printrot - print encoded string using rot13.
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
