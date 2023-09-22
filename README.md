@@ -94,7 +94,6 @@ HERE IS THE DESCISRIPTION
 /**
  * printpercentage - functn to print %
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -103,7 +102,7 @@ HERE IS THE DESCISRIPTION
  * printdefault - functn to print default
  * @format: input character
  * @counter: input integer
- *
+
  * Return: counter
  */
 —————————————————————————————-
@@ -120,7 +119,6 @@ HERE IS THE DESCISRIPTION
  * printdigit - functn to print integer or decimal
  * @ptr: input pointer
  * @counter: input integer
-
  * Return: counter
  */
 ——————————————————————————————
@@ -137,7 +135,7 @@ HERE IS THE DESCISRIPTION
  * _strlen - functn measure array length
  * @s: my input
  * Description: function calculate arr length
- *
+
  * Return: length
  */
 ——————————————————————————————
