@@ -12,7 +12,6 @@ HERE IS THE DESCISRIPTION
 # int _printf(const char *format, ...)
 * _printf - Prints anything
 * @format: String with format of parameters.
-*
 * Return: counter number.
 */
 ——————————————————————————————
@@ -21,8 +20,8 @@ HERE IS THE DESCISRIPTION
  * printcs - functn to print c, s, %
  * @format: input character
  * @ptr: input pointer
+
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -30,7 +29,7 @@ HERE IS THE DESCISRIPTION
 # int _putchar(char c)
  * _putchar - writes the character c to stdout
  * @c: The character to print
- *
+
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
 */
