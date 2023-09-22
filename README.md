@@ -55,7 +55,7 @@ HERE IS THE DESCISRIPTION
  * @ptr: input pointer
  * @counter: input integer
  * Return: counter
- */
+*/
 ——————————————————————————————
 # int printchar(va_list ptr, int counter)
 /**
@@ -63,7 +63,7 @@ HERE IS THE DESCISRIPTION
  * @ptr: input pointer
  * @counter: input integer
  * Return: counter
- */
+*/
 ——————————————————————————————
 # int printslash(char format, int counter)
 /**
@@ -71,7 +71,7 @@ HERE IS THE DESCISRIPTION
  * @format: input character
  * @counter: input integer
  * Return: counter
- */
+*/
 ——————————————————————————————
 # int printhex(va_list ptr, int base, int counter, int hexcase)
 /**
