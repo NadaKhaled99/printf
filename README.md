@@ -70,8 +70,6 @@ HERE IS THE DESCISRIPTION
  * Return: counter
  */
 ——————————————————————————————
-
-
 # int printslash(char format, int counter)
 /**
  * printslash - functn to print /, /n, /t
@@ -108,16 +106,12 @@ HERE IS THE DESCISRIPTION
  *
  * Return: counter
  */
-——————————————————————————————
-
-
-
+—————————————————————————————-
 # int printstring(va_list ptr, int counter)
 /**
  * printstring - functn to print string
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -126,7 +120,7 @@ HERE IS THE DESCISRIPTION
  * printdigit - functn to print integer or decimal
  * @ptr: input pointer
  * @counter: input integer
- *
+
  * Return: counter
  */
 ——————————————————————————————
@@ -135,7 +129,6 @@ HERE IS THE DESCISRIPTION
  * printunsign - functn to print unsigned int
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -143,22 +136,16 @@ HERE IS THE DESCISRIPTION
 /**
  * _strlen - functn measure array length
  * @s: my input
- *
  * Description: function calculate arr length
  *
  * Return: length
  */
 ——————————————————————————————
-
-
-
-
 # int printreversed(va_list ptr, int counter)
 /**
  * printreversed - functn reversed string
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
@@ -167,7 +154,6 @@ HERE IS THE DESCISRIPTION
  * printrot - print encoded string using rot13.
  * @ptr: input pointer
  * @counter: input integer
- *
  * Return: counter
  */
 ——————————————————————————————
