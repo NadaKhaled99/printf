@@ -15,7 +15,7 @@ HERE IS THE DESCISRIPTION
 *
 * Return: counter number.
 */
-——————————————————————————————
+
 # int printcs(char format, va_list ptr, int counter)
 /**
  * printcs - functn to print c, s, %
@@ -25,7 +25,7 @@ HERE IS THE DESCISRIPTION
  *
  * Return: counter
  */
-——————————————————————————————
+
 /**
 # int _putchar(char c)
  * _putchar - writes the character c to stdout
@@ -33,8 +33,8 @@ HERE IS THE DESCISRIPTION
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
- */
-——————————————————————————————
+*/
+
 /**
 # int printpointer(va_list ptr, int counter)
 *printpointer- functn to print pointer
@@ -42,8 +42,6 @@ HERE IS THE DESCISRIPTION
 *@counter: input integer
 *Return: counter
 */
-——————————————————————————————
-
 
 # int printString(va_list ptr, int counter)
 /**
@@ -52,7 +50,7 @@ HERE IS THE DESCISRIPTION
 *@counter:input integer
 *Return:counter
 */
-——————————————————————————————
+
 # int printbase(char format, va_list ptr, int counter)
 /**
  * printbase - functn to print bin, oct, hex
