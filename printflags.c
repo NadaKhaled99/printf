@@ -30,8 +30,11 @@ int printpospace(const char *format, int *j, va_list ptr, int counter)
 int n = va_arg(ptr, int);
 if (*format == ' ')
 {
+if (n >= 0)
+{
 _putchar(' ');
 counter++;
+}
 }
 if (*format == '+')
 {
