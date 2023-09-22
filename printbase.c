@@ -7,7 +7,7 @@
  *
  * Return: counter
  */
-int printbase(const char *format, int n, int counter)
+int printbase(const char *format, unsigned int n, int counter)
 {
 if (*format == 'b')
 counter = printbze(n, 2, counter);
@@ -27,7 +27,7 @@ return (counter);
  *
  * Return: counter
  */
-int printbze(int n, int base, int counter)
+int printbze(unsigned int n, int base, int counter)
 {
 	int bit[32];
 	int k = 0;
@@ -62,7 +62,7 @@ int printbze(int n, int base, int counter)
  *
  * Return: counter
  */
-int printhex(int n, int base, int counter, int hexcase)
+int printhex(unsigned int n, int base, int counter, int hexcase)
 {
 	int bit[32];
 	int k = 0;
