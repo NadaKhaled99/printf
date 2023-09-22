@@ -31,17 +31,7 @@ int printreversed(va_list ptr, int counter)
 char *str = va_arg(ptr, char *);
 int len;
 
-if (!str)
-{
-_putchar('(');
-_putchar('n');
-_putchar('u');
-_putchar('l');
-_putchar('l');
-_putchar(')');
-counter = counter + 6;
-}
-else
+if (str && *str)
 {
 len = _strlen(str);
 do {
