@@ -84,15 +84,21 @@ counter++;
 }
 if (*format == 'x')
 {
+if (n > 0)
+{
 _putchar('0');
 _putchar('x');
 counter = counter + 2;
 }
+}
 if (*format == 'X')
+{
+if (n > 0)
 {
 _putchar('0');
 _putchar('X');
 counter = counter + 2;
+}
 }
 counter = printbase(format, n, counter);
 return (counter);
